@@ -15,7 +15,8 @@
   var link = document.createElement('link');
 
   // Get the contents of the rendered file
-  var code = document.getElementsByTagName('pre')[0].innerHTML;
+  var selectedText = window.getSelection && window.getSelection().toString();
+  var code = selectedText || document.getElementsByTagName('pre')[0].innerHTML;
 
   // Open the tag to hold the line numbers
   var lineNumbers = '<pre><code style="' + [
